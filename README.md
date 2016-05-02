@@ -21,8 +21,8 @@ Once the C++ code done, SWIG will require an interface file(.i) to be done in or
 Then, the second step is to use the Python module DistUtils which will build the Python module that will be included in the Python script.
 Once the module generated (Distutils will use GCC/G++ with the different flags set by the developer), it will be possible to import it
 in any Python script (import). Then, the module will have to instanciate a Simulation object and call functions available from it.
-Notice that the Python shell of this demo is custom, which means that the user will be able to have its own shell with it's own
-functions with auto-completion. In order to do that, the function has to start by "do_" + functionName>
+Notice that the Python shell of this demo is custom, which means that the user will be able to have its own shell with its own
+functions with auto-completion. In order to do that, the function has to start by "do_" + functionName.
 
 <br/><br/>
 <b>To install and run:</b><br/>
