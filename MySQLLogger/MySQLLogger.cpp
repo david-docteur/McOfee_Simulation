@@ -21,7 +21,7 @@ MySQLLogger::MySQLLogger()
     /* Initialize driver */
     driver = sql::mysql::get_mysql_driver_instance();
     /* Connect to localhost */
-    con = driver->connect("tcp://127.0.0.1:3306", "root", "password");
+    con = driver->connect("tcp://127.0.0.1:3306", "root", "password"); // Never do that in a prod environment :)
     /* Ready to query */
     stmt = con->createStatement();
     /* Choose database to query from */
@@ -35,7 +35,7 @@ MySQLLogger::~MySQLLogger()
     con->close();
     delete stmt;
     delete con;
-    //delete driver; SEGFAULT - Singleton instance already removed by the first object?
+    //delete driver; From the MySQL documentation, this doesn't have to be destroyed.
 }
 
 void MySQLLogger::addLog(int threatId, string action)
